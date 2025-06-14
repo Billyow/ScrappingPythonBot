@@ -77,6 +77,15 @@ allPhones=firstPagePhones+secondPagePhones
 import json
 with open('X:/Usuario/Escritorio/Trabajos/Proyecto de construccion de SW/parcticas_python/json/products.json', 'w') as f:
     json.dump(allPhones, f, indent=4)
+
+footer = bot.find_element(By.XPATH,'/html/body/div[1]/footer/section[3]/div/div[1]/button')
+bot.execute_script("arguments[0].scrollIntoView(true);", footer)
+sleep(1)
+footer.click()
+sleep(1)
+
+bot.save_screenshot('X:/Usuario/Escritorio/Trabajos/Proyecto de construccion de SW/parcticas_python/img/salesBtn.png')
+sleep(2)
 # close the browser 
 bot.quit()
 
